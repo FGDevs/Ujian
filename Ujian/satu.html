@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Tools</title>
+</head>
+<body>
+    <h1>Drawing Tools</h1>
+    <p>1. Persegi</p>
+    <p>2. segitiga Siku-Siku Rata Kiri</p>
+    <p>3. Segitiga Siku-Siku Rata Kanan</p>
+    <p>Jenis Bangunan:</p>
+    <p><input type="number" name="jenis" id="jenisB"></p>
+    <p>Ukuran:</p>
+    <p><input type="number" name="tinggi" id="tinggiB"></p>
+    <p><button value="bangun" onclick="bangungedung()">Lihat</button></p>
+    <h4 id="a"></h4>
+</body>
+<script>
+    const bangungedung=()=>{
+        var inputjenis=document.getElementById("jenisB").value
+        var inputtinggi=document.getElementById("tinggiB").value
+        var output=''    
+
+        if(inputjenis==1){
+            for (let i=0;i<inputtinggi;i++){
+                for (let j=0;j<inputtinggi;j++){
+                    output+='*'
+                }
+                output+='<br>'
+            }
+        }else if(inputjenis==2){
+            for(let i=0;i<inputtinggi;i++){
+                for(let j=0;j<=i;j++){
+                    output+='*'
+                }
+                output+='<br>'
+            }
+        }else if(inputjenis==3){
+            for(let i=0;i<inputtinggi;i++){
+                for(let j=inputtinggi;j>i;j--){
+                    output+=' '
+                }
+                for(let k=0;k<=i;k++){
+                    output+='*'
+                }
+                output+='<br>'
+            }  
+        }else{
+            alert('hanya masukkan angka 1 sampai 3 ')
+        }
+        document.getElementById("a").innerHTML=output
+    }
+</script>
+</html>

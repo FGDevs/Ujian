@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort DIY</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arrNumber=[]
+    var nilaitertinggi=0
+    var nilaiterendah=0
+
+    do {
+        var input=prompt('masukan angka')
+        if(!isNaN(input)){
+            arrNumber.push(input)
+        }
+    } while (!isNaN(input));
+    
+    arrNumber.sort()
+    nilaitertinggi=arrNumber[arrNumber.length-1]
+    nilaiterendah=arrNumber[0]
+
+    console.log(arrNumber)
+    console.log(`nilai tertinggi = ${nilaitertinggi}`)
+    console.log(`nilai terendah = ${nilaiterendah}`)
+    
+    
+
+</script>
+</html>

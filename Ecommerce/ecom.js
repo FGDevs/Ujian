@@ -9,6 +9,8 @@ var arrProduct = [
 // init "Category"
 var arrCategory = ["All","Fast Food","Electronic","Cloth","Fruit"];
 
+// ini "Cart"
+var cart=[]
 
 // everthing that has to be rendered when web initially opened
 const tampilanawal=()=>{
@@ -213,6 +215,30 @@ function Showfilter(arr){
                     <td><input type="button" value="edit" onclick="funcedit(${index})"/></td>
                 </tr>`)
     })
+}
+
+function tampilkancart(){
+    if(cart.length){
+        var output=cart.map((val,index)=>{
+            return `<tr>
+                        <td>${val.id}</td>
+                        <td>${val.category}</td>
+                        <td>${val.name}</td>
+                        <td>${val.price}</td>
+                        <td>${val.qty}</td>
+                        <td><input type='button' value='delete' onclick='deletecart(${val.id})'/></td>
+                    <tr>`
+        }).join('')
+        return output
+    }else{
+        return ''
+    }
+}
+
+const deletecart=(id)=>{
+    var indexcart=cart.findIndex((val)=>val.id===id)
+    cart.splice(indexcart,1)
+    document.getElementById('cart').innerHTML=tampilkancart()
 }
 
 tampilanawal()
